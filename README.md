@@ -108,7 +108,9 @@ college_management_project/
 │
 ├── README.md
 └── .gitignore
+ ```
 
 ## Dashboard
 
 ![Dashboard](screenshots/dashboard.png)
+
