@@ -114,3 +114,22 @@ college_management_project/
 
 ![Dashboard](screenshots/dashboard.png)
 
+## Students Page
+![Students](screenshots/student.png)
+
+## Faculty Page
+![Faculty](screenshots/faculty.png)
+
+## Courses Page
+![Courses](screenshots/courses.png)
+
+## Attendance Page
+![Attendance](screenshots/attendance.png)
+
+## Results Page
+![Results](screenshots/results.png)
+
+## Analytics Page
+![Analytics](screenshots/analytics.png)
+
+![Analytics](screenshots/analytics_1.png)
