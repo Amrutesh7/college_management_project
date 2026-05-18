@@ -1074,3 +1074,93 @@ WHERE result_id = 3;
 
 delete from  results;
 alter table results auto_increment = 1;
+
+select *from departments;
+select * from faculty;
+select *from students;
+select *from courses;
+select *from enrollments;
+select *from attendance;
+select * from results;
+select *from audit_logs;
+
+show triggers;
+SELECT
+    a.attendance_id,
+    s.first_name,
+    s.last_name,
+    c.course_name,
+    a.attendance_date,
+    a.status,
+    a.remarks
+FROM attendance a
+JOIN students s
+    ON a.student_id = s.student_id
+JOIN courses c
+    ON a.course_id = c.course_id;
+    
+SELECT
+    s.student_id,
+    s.first_name,
+
+    ROUND(
+        COUNT(
+            CASE
+                WHEN a.status = 'Present'
+                THEN 1
+            END
+        ) * 100.0 / COUNT(*),
+        2
+    ) AS attendance_percentage
+
+FROM attendance a
+
+JOIN students s
+    ON a.student_id = s.student_id
+
+GROUP BY s.student_id;
+
+desc faculty;
+desc departments;
+desc courses;
+
+SELECT -
+    faculty_id,
+    first_name,
+    last_name,
+    department_id
+FROM faculty;
+SELECT * FROM departments;
+
+SELECT *
+FROM results;
+WHERE student_id = 11;
+
+SELECT *
+FROM attendance
+WHERE student_id = 11;
+
+INSERT INTO results
+(student_id, course_id, internal_marks, external_marks, total_marks, grade, result_status)
+
+VALUES
+(11, 5, 42, 48, 90, 'A', 'Pass'),
+(12, 6, 40, 45, 85, 'B', 'Pass'),
+(13, 7, 35, 40, 75, 'C', 'Pass'),
+(14, 8, 30, 25, 55, 'F', 'Fail'),
+(15, 9, 44, 46, 90, 'A', 'Pass');
+
+INSERT INTO attendance
+(student_id, course_id, attendance_date, status)
+
+VALUES
+(11, 5, '2026-05-01', 'Present'),
+(11, 5, '2026-05-02', 'Present'),
+(11, 5, '2026-05-03', 'Absent'),
+
+(12, 6, '2026-05-01', 'Present'),
+(12, 6, '2026-05-02', 'Present'),
+
+(13, 7, '2026-05-01', 'Absent'),
+(13, 7, '2026-05-02', 'Present');
+select *from departments;
